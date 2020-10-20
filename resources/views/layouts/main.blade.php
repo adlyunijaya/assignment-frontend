@@ -23,6 +23,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <title>Dashboard - Midone - Tailwind HTML Admin Template</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.22/datatables.min.css"/>
     <!-- END: CSS Assets-->
 </head>
 <!-- END: Head -->
@@ -42,26 +43,18 @@ License: You must have a valid license purchased only from themeforest(the above
                 @include('extras.top_bar')
             </div>
             <!-- END: Top Bar -->
-            <div class="grid grid-cols-12 gap-6">
+      
                 @yield('content')
-            </div>
+    
         </div>
         <!-- END: Content -->
     </div>
-    <!-- BEGIN: Dark Mode Switcher-->
-    <div data-url="side-menu-dark-dashboard.html"
-        class="dark-mode-switcher cursor-pointer shadow-md fixed bottom-0 right-0 box dark:bg-dark-2 border rounded-full w-40 h-12 flex items-center justify-center z-50 mb-10 mr-10">
-        <div class="mr-4 text-gray-700 dark:text-gray-300">Dark Mode</div>
-        <div class="dark-mode-switcher__toggle border"></div>
-    </div>
-    <!-- END: Dark Mode Switcher-->
+  
     <!-- BEGIN: JS Assets-->
-    <script
-        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=[" your-google-map-api"]&libraries=places"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.22/datatables.min.js"></script>
     <!-- END: JS Assets-->
+    @stack('dataTable')
 </body>
 
 </html>
